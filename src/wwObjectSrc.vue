@@ -1,9 +1,7 @@
 <template>
-	<div>
-		<div class="ww-button-wrapper">
-			<div class='ww-button'>
-				<wwObject v-bind:ww-object="wwObject.content.data.text" ww-inside-ww-object="true" :ww-not-editable="textNotEditable" ww-default-object-type="ww-text" ww-object-types-allowed="['ww-text']"></wwObject>
-			</div>
+	<div class="ww-button-wrapper">
+		<div class='ww-button'>
+			<wwObject v-bind:ww-object="wwObject.content.data.text" ww-inside-ww-object="true" :ww-not-editable="textNotEditable" ww-default-object-type="ww-text" ww-object-types-allowed="['ww-text']"></wwObject>
 		</div>
 	</div>
 </template>

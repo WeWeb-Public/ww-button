@@ -57,6 +57,8 @@ export default {
 			element: this.$el.querySelector('.ww-button'),
 			noAnim: this.wwAttrs.wwNoAnim,
 		});
+
+		this.$emit('ww-loaded', this);
 	}
 };
 </script>

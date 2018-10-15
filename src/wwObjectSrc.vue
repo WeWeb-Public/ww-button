@@ -1,62 +1,63 @@
 <template>
-	<div class="ww-button-wrapper">
-		<div class='ww-button'>
-			<wwObject v-bind:ww-object="wwObject.content.data.text" ww-inside-ww-object="true" :ww-not-editable="textNotEditable" ww-default-object-type="ww-text" ww-object-types-allowed="['ww-text']"></wwObject>
-		</div>
-	</div>
+    <div class="ww-button-wrapper">
+        <div class='ww-button'>
+            <wwObject v-bind:ww-object="wwObject.content.data.text" v-bind:section="section" ww-inside-ww-object="true" :ww-not-editable="textNotEditable" ww-default-object-type="ww-text" ww-object-types-allowed="['ww-text']"></wwObject>
+        </div>
+    </div>
 </template>
  
 
 <script>
 export default {
-	name: "ww-button",
-	props: {
-		wwObject: Object,
-		wwAttrs: {
-			type: Object,
-			default: {}
-		}
-	},
-	data() {
-		return {
-			textNotEditable: false
-		}
-	},
-	computed: {
-	},
-	watch: {
-	},
-	beforeDestroy() { },
-	methods: {
-		init() {
-			if (!this.wwObject.content.data.text || !this.wwObject.content.data.text.content) {
-				let oldText = null
-				if (this.wwObject.content.data.text) {
-					oldText = JSON.parse(JSON.stringify(this.wwObject.content.data.text))
-				}
+    name: "ww-button",
+    props: {
+        wwObject: Object,
+        section: Object,
+        wwAttrs: {
+            type: Object,
+            default: {}
+        }
+    },
+    data() {
+        return {
+            textNotEditable: false
+        }
+    },
+    computed: {
+    },
+    watch: {
+    },
+    beforeDestroy() { },
+    methods: {
+        init() {
+            if (!this.wwObject.content.data.text || !this.wwObject.content.data.text.content) {
+                let oldText = null
+                if (this.wwObject.content.data.text) {
+                    oldText = JSON.parse(JSON.stringify(this.wwObject.content.data.text))
+                }
 
-				let text = wwLib.wwObject.getDefault()
-				text.content = wwLib.wwObject.getDefaultContent('ww-text')
-				text.content.data.text = oldText || {}
+                let text = wwLib.wwObject.getDefault()
+                text.content = wwLib.wwObject.getDefaultContent('ww-text')
+                text.content.data.text = oldText || {}
 
-				this.wwObject.content.data.text = text
-			}
-			this.textNotEditable = this.wwAttrs.wwCategory == 'button-navbar'
-				|| this.wwAttrs.wwCategory == 'button-navbar-page' || this.wwAttrs.wwCategory == 'button-navbar-menu'
-		}
-	},
-	mounted() {
-		this.init()
+                this.wwObject.content.data.text = text
+            }
+            this.textNotEditable = this.wwAttrs.wwCategory == 'button-navbar'
+                || this.wwAttrs.wwCategory == 'button-navbar-page' || this.wwAttrs.wwCategory == 'button-navbar-menu'
+        }
+    },
+    mounted() {
+        this.init()
 
-		wwLib.wwElementsStyle.applyAllStyles({
-			wwObject: this.wwObject,
-			lastWwObject: null,
-			element: this.$el.querySelector('.ww-button'),
-			noAnim: this.wwAttrs.wwNoAnim,
-		});
+        wwLib.wwElementsStyle.applyAllStyles({
+            wwObject: this.wwObject,
+            lastWwObject: null,
+            element: this.$el.querySelector('.ww-button'),
+            noAnim: this.wwAttrs.wwNoAnim,
+        });
 
-		this.$emit('ww-loaded', this);
-	}
+        this.$emit('ww-loaded', this);
+    }
 };
 </script>
 

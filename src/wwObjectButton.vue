@@ -1,7 +1,7 @@
 <template>
     <div class="ww-button-wrapper">
         <div class='ww-button'>
-            <wwObject v-bind:ww-object="wwObject.content.data.text" v-bind:section="section" ww-inside-ww-object="true" :ww-not-editable="textNotEditable" ww-default-object-type="ww-text" ww-object-types-allowed="['ww-text']"></wwObject>
+            <wwObject v-bind:ww-object="wwObject.content.data.text" ww-inside-ww-object="true" :ww-not-editable="textNotEditable" ww-default-object-type="ww-text" ww-object-types-allowed="['ww-text']"></wwObject>
         </div>
     </div>
 </template>
@@ -11,8 +11,7 @@
 export default {
     name: "ww-button",
     props: {
-        wwObject: Object,
-        section: Object,
+        wwObjectCtrl: Object,
         wwAttrs: {
             type: Object,
             default: {}
@@ -20,6 +19,7 @@ export default {
     },
     data() {
         return {
+            wwObject: this.wwObjectCtrl.get(),
             textNotEditable: false
         }
     },

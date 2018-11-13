@@ -1,4 +1,4 @@
-import wwObject from './wwObjectSrc.vue'
+import wwObject from './wwObjectButton.vue'
 
 const name = "ww-button";
 const wwEnableMetrics = true;

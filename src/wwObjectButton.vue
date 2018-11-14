@@ -19,11 +19,13 @@ export default {
     },
     data() {
         return {
-            wwObject: this.wwObjectCtrl.get(),
             textNotEditable: false
         }
     },
     computed: {
+        wwObject() {
+            return this.wwObjectCtrl.get();
+        }
     },
     watch: {
     },
@@ -41,6 +43,7 @@ export default {
                 text.content.data.text = oldText || {}
 
                 this.wwObject.content.data.text = text
+                this.wwObjectCtrl.update(this.wwObject);
             }
             this.textNotEditable = this.wwAttrs.wwCategory == 'button-navbar'
                 || this.wwAttrs.wwCategory == 'button-navbar-page' || this.wwAttrs.wwCategory == 'button-navbar-menu'

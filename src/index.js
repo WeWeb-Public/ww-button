@@ -1,7 +1,6 @@
 import wwObject from './wwObjectButton.vue'
 
 const name = "ww-button";
-const wwEnableMetrics = true;
 
 const addComponent = function () {
     if (window.vm) {
@@ -22,7 +21,11 @@ const addComponent = function () {
                     fullWidth: false
                 }
             },
-            enableMetrics: wwEnableMetrics,
+            upsales: {
+                wwAnalytics: {
+                    click: true
+                }
+            },
             /* wwManager:start */
             cmsOptions: {
             }

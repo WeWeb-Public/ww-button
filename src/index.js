@@ -13,11 +13,21 @@ const addComponent = function () {
                         fr_FR: "Nouveau bouton",
                         en_GB: "New Button"
                     },
-                    color: 'red',
-                    borderColor: 'red',
-                    backgroundColor: 'yellow',
-                    font: '',
-                    classes: ["ww-class-btn-bg-none", "ww-class-btn-padding-small", "ww-class-btn-border-small", "ww-class-btn-format-round-small", "ww-class-font-size-small"],
+                    style: {
+                        backgroundColor: "#FFFFFF",
+                        gradient: '',
+                        borderRadius: 0,
+                        borderWidth: 0,
+                        borderColor: "#000000",
+                        borderStyle: "solid",
+                        boxShadow: {
+                            x: 0,
+                            y: 0,
+                            b: 0,
+                            s: 0,
+                            c: ''
+                        }
+                    },
                     fullWidth: false
                 }
             },
@@ -28,6 +38,28 @@ const addComponent = function () {
             },
             /* wwManager:start */
             cmsOptions: {
+                wwObjectMenu: {
+                    items: [
+                        {
+                            name: 'OPTIONS',
+                            text: {
+                                en_GB: 'Options...',
+                                fr_FR: 'Options...'
+                            },
+                            icon: 'wwi wwi-edit-other',
+                            action: 'edit'
+                        },
+                        {
+                            name: 'LINK',
+                            text: {
+                                en_GB: 'Link',
+                                fr_FR: 'Lien'
+                            },
+                            icon: 'wwi wwi-link-external',
+                            action: 'changeLink'
+                        }
+                    ]
+                }
             }
             /* wwManager:end */
         });

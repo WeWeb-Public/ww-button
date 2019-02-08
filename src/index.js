@@ -10,16 +10,16 @@ const addComponent = function () {
                 type: name,
                 data: {
                     text: {
-                        fr_FR: "Nouveau bouton",
-                        en_GB: "New Button"
+
                     },
                     style: {
                         backgroundColor: "#FFFFFF",
                         gradient: '',
-                        borderRadius: 0,
-                        borderWidth: 0,
+                        borderRadius: 50,
+                        borderWidth: 1,
                         borderColor: "#000000",
                         borderStyle: "solid",
+                        padding: 10,
                         boxShadow: {
                             x: 0,
                             y: 0,

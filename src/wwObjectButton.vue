@@ -76,21 +76,18 @@ export default {
     beforeDestroy() { },
     methods: {
         init() {
-            if (!this.wwObject.content.data.text || !this.wwObject.content.data.text.content) {
-                let oldText = null
-                if (this.wwObject.content.data.text) {
-                    oldText = JSON.parse(JSON.stringify(this.wwObject.content.data.text))
-                }
+            if (!this.wwObject.content.data.text || !this.wwObject.content.data.text.uniqueId) {
 
                 let text = wwLib.wwObject.getDefault()
                 text.content = wwLib.wwObject.getDefaultContent('ww-text')
-                text.content.data.text = oldText || {}
+                text.content.data.text = {
+                    fr_FR: 'Nouveau bouton',
+                    en_GB: 'New button',
+                }
 
                 this.wwObject.content.data.text = text
                 this.wwObjectCtrl.update(this.wwObject);
             }
-            this.textNotEditable = this.wwAttrs.wwCategory == 'button-navbar'
-                || this.wwAttrs.wwCategory == 'button-navbar-page' || this.wwAttrs.wwCategory == 'button-navbar-menu'
         },
         getShadow() {
             let wwObjectStyle = this.wwObject.content.data.style || {};

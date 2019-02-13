@@ -31,7 +31,7 @@ wwLib.wwPopups.addStory('WWBUTTON_LINKS', {
 /* wwManager:end */
 
 export default {
-    name: "ww-button",
+    name: "__COMPONENT_NAME__",
     props: {
         wwObjectCtrl: Object,
         wwAttrs: {

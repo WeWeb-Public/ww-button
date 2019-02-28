@@ -24,6 +24,7 @@ wwLib.wwPopups.addStory('WWBUTTON_LINKS', {
             'SECTION',
             'POPUP',
             'DOWNLOAD',
+            'CLOSE_POPUP',
             'NO_LINK'
         ]
     }
@@ -110,7 +111,8 @@ export default {
 
             try {
                 const result = await wwLib.wwPopups.open(options)
-                console.log(result);
+
+                this.wwObjectCtrl.globalEdit(result);
 
             } catch (error) {
 

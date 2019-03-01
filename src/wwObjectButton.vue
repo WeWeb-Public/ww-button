@@ -13,8 +13,8 @@ import wwButtonPopupStyle from './wwButtonPopupStyle.vue'
 wwLib.wwPopups.addPopup('wwButtonPopupStyle', wwButtonPopupStyle);
 wwLib.wwPopups.addStory('WWBUTTON_LINKS', {
     title: {
-        en_GB: 'Link',
-        fr_FR: 'Lien'
+        en: 'Link',
+        fr: 'Lien'
     },
     type: 'wwPopupLinks',
     storyData: {
@@ -82,8 +82,8 @@ export default {
                 let text = wwLib.wwObject.getDefault()
                 text.content = wwLib.wwObject.getDefaultContent('ww-text')
                 text.content.data.text = {
-                    fr_FR: 'Nouveau bouton',
-                    en_GB: 'New button',
+                    fr: 'Nouveau bouton',
+                    en: 'New button',
                 }
 
                 this.wwObject.content.data.text = text
@@ -122,8 +122,8 @@ export default {
 
             wwLib.wwPopups.addStory('WWBUTTON_EDIT', {
                 title: {
-                    en_GB: 'Edit button',
-                    fr_FR: 'Editer le bouton'
+                    en: 'Edit button',
+                    fr: 'Editer le bouton'
                 },
                 type: 'wwPopupEditWwObject',
                 buttons: null,
@@ -131,16 +131,16 @@ export default {
                     list: {
                         EDIT_LINK: {
                             separator: {
-                                en_GB: 'Link',
-                                fr_FR: 'Lien'
+                                en: 'Link',
+                                fr: 'Lien'
                             },
                             title: {
-                                en_GB: 'Change link',
-                                fr_FR: 'Changer le lien'
+                                en: 'Change link',
+                                fr: 'Changer le lien'
                             },
                             desc: {
-                                en_GB: 'External link, page link, ...',
-                                fr_FR: 'Lien externe, lien vers une page, ...'
+                                en: 'External link, page link, ...',
+                                fr: 'Lien externe, lien vers une page, ...'
                             },
                             icon: 'wwi wwi-link-external',
                             shortcut: 'l',
@@ -148,16 +148,16 @@ export default {
                         },
                         EDIT_STYLE: {
                             separator: {
-                                en_GB: 'Style',
-                                fr_FR: 'Style'
+                                en: 'Style',
+                                fr: 'Style'
                             },
                             title: {
-                                en_GB: 'Change button style',
-                                fr_FR: 'Changer l\'apparence du bouton'
+                                en: 'Change button style',
+                                fr: 'Changer l\'apparence du bouton'
                             },
                             desc: {
-                                en_GB: 'Borders, colors, shadow, ...',
-                                fr_FR: 'Bordures, couleurs, ombres, ...'
+                                en: 'Borders, colors, shadow, ...',
+                                fr: 'Bordures, couleurs, ombres, ...'
                             },
                             icon: 'wwi wwi-edit-style',
                             shortcut: 's',
@@ -168,15 +168,15 @@ export default {
             })
             wwLib.wwPopups.addStory('WWBUTTON_STYLE', {
                 title: {
-                    en_GB: 'Button style',
-                    fr_FR: 'Style du bouton'
+                    en: 'Button style',
+                    fr: 'Style du bouton'
                 },
                 type: 'wwButtonPopupStyle',
                 buttons: {
                     OK: {
                         text: {
-                            en_GB: 'Ok',
-                            fr_FR: 'Valider'
+                            en: 'Ok',
+                            fr: 'Valider'
                         },
                         next: false
                     }

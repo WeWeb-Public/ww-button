@@ -1,7 +1,7 @@
 <template>
     <div class="ww-button-wrapper">
         <div class="ww-button" :style="style">
-            <wwObject :ww-object="wwObject.content.data.text" ww-inside-ww-object="true" :ww-not-editable="textNotEditable" ww-default-object-type="ww-text" ww-object-types-allowed="['ww-text']" :ww-no-section="wwAttrs.wwNoSection" :ww-no-link="wwAttrs.wwNoLink" ww-force-edit-mode="CONTENT"></wwObject>
+            <wwObject :ww-object="wwObject.content.data.text" ww-inside-ww-object="ww-button" :ww-not-editable="textNotEditable" ww-default-object-type="ww-text" ww-object-types-allowed="['ww-text']" :ww-no-section="wwAttrs.wwNoSection" :ww-no-link="wwAttrs.wwNoLink" ww-force-edit-mode="CONTENT"></wwObject>
         </div>
     </div>
 </template>

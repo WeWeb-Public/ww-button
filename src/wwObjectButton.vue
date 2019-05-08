@@ -1,9 +1,9 @@
 <template>
     <div class="ww-button-wrapper">
-        <!-- wwManager:start -->
-        <wwOrangeButton class="ww-orange-button" v-if="wwObjectCtrl.getSectionCtrl().getEditMode()"></wwOrangeButton>
-        <!-- wwManager:end -->
         <div class="ww-button" :style="style">
+            <!-- wwManager:start -->
+            <wwOrangeButton class="ww-orange-button" v-if="wwObjectCtrl.getSectionCtrl().getEditMode()"></wwOrangeButton>
+            <!-- wwManager:end -->
             <wwObject :ww-object="wwObject.content.data.text" ww-inside-ww-object="ww-button" :ww-not-editable="textNotEditable" ww-default-object-type="ww-text" ww-object-types-allowed="['ww-text']" :ww-no-section="wwAttrs.wwNoSection" :ww-no-link="wwAttrs.wwNoLink" ww-force-edit-mode="CONTENT"></wwObject>
         </div>
     </div>
@@ -259,11 +259,11 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
 }
 
 .ww-button {
     display: inline-block;
+    position: relative;
 }
 
 /* wwManager:start */

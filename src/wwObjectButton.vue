@@ -1,5 +1,8 @@
 <template>
     <div class="ww-button-wrapper">
+        <!-- wwManager:start -->
+        <wwOrangeButton class="ww-orange-button" v-if="wwObjectCtrl.getSectionCtrl().getEditMode()"></wwOrangeButton>
+        <!-- wwManager:end -->
         <div class="ww-button" :style="style">
             <wwObject :ww-object="wwObject.content.data.text" ww-inside-ww-object="ww-button" :ww-not-editable="textNotEditable" ww-default-object-type="ww-text" ww-object-types-allowed="['ww-text']" :ww-no-section="wwAttrs.wwNoSection" :ww-no-link="wwAttrs.wwNoLink" ww-force-edit-mode="CONTENT"></wwObject>
         </div>
@@ -256,109 +259,20 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .ww-button {
     display: inline-block;
 }
-/* ww-class-btn-bg */
-.ww-class-btn-bg-none {
-    background-color: rgba(0, 0, 0, 0) !important;
-}
 
-/* ww-class-btn-border */
-.ww-class-btn-border-none {
-    border: none !important;
+/* wwManager:start */
+.ww-orange-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    z-index: 1;
 }
-
-.ww-class-btn-border-small {
-    border-style: solid !important;
-    border-width: 1px !important;
-}
-
-.ww-class-btn-border-medium {
-    border-style: solid !important;
-    border-width: 2px !important;
-}
-
-.ww-class-btn-border-big {
-    border-style: solid !important;
-    border-width: 5px !important;
-}
-
-/* ww-class-btn-format */
-.ww-class-btn-format-square {
-    border-radius: 0 !important;
-}
-
-.ww-class-btn-format-round-small {
-    border-radius: 5px !important;
-}
-
-.ww-class-btn-format-round-medium {
-    border-radius: 10px !important;
-}
-
-.ww-class-btn-format-round-big {
-    border-radius: 500px !important;
-}
-
-/* ww-class-btn-padding */
-.ww-class-btn-padding-none {
-    padding: 0 !important;
-}
-
-.ww-class-btn-padding-small {
-    padding: 5px 10px !important;
-}
-
-.ww-class-btn-padding-medium {
-    padding: 10px 20px !important;
-}
-
-.ww-class-btn-padding-big {
-    padding: 20px 40px !important;
-}
-
-/* ww-class-btn-shadow */
-.ww-class-btn-shadow-box-small {
-    -webkit-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
-    -moz-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
-    box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
-}
-
-.ww-class-btn-shadow-box-medium {
-    -webkit-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.75);
-    -moz-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.75);
-    box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.75);
-}
-
-.ww-class-btn-shadow-box-big {
-    -webkit-box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.75);
-    -moz-box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.75);
-    box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.75);
-}
-
-.ww-class-btn-shadow-bottom-small {
-    -webkit-box-shadow: 0px 2px 5px 0px rgba(50, 50, 50, 0.75);
-    -moz-box-shadow: 0px 2px 5px 0px rgba(50, 50, 50, 0.75);
-    box-shadow: 0px 2px 5px 0px rgba(50, 50, 50, 0.75);
-}
-
-.ww-class-btn-shadow-bottom-medium {
-    -webkit-box-shadow: 0px 3px 10px 0px rgba(50, 50, 50, 0.75);
-    -moz-box-shadow: 0px 3px 10px 0px rgba(50, 50, 50, 0.75);
-    box-shadow: 0px 3px 10px 0px rgba(50, 50, 50, 0.75);
-}
-
-.ww-class-btn-shadow-bottom-big {
-    -webkit-box-shadow: 0px 7px 20px 0px rgba(50, 50, 50, 0.75);
-    -moz-box-shadow: 0px 7px 20px 0px rgba(50, 50, 50, 0.75);
-    box-shadow: 0px 7px 20px 0px rgba(50, 50, 50, 0.75);
-}
-
-/* ww-class-btn-width */
-.ww-class-btn-width-full {
-    width: 100% !important;
-}
+/* wwManager:end */
 </style>

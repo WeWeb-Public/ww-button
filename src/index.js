@@ -21,6 +21,7 @@ const addComponent = function () {
                         borderColor: "#000000",
                         borderStyle: "solid",
                         padding: 10,
+                        justify: null,
                         boxShadow: {
                             x: 0,
                             y: 0,

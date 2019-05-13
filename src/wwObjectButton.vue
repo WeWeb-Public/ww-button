@@ -1,5 +1,5 @@
 <template>
-    <div class="ww-button-wrapper">
+    <div class="ww-button-wrapper" :style="wrapperStyle">
         <div class="ww-button" :style="style">
             <!-- wwManager:start -->
             <wwOrangeButton class="ww-orange-button" v-if="wwObjectCtrl.getSectionCtrl().getEditMode()"></wwOrangeButton>
@@ -70,8 +70,15 @@ export default {
             style.borderColor = wwObjectStyle.borderColor || '#000000';
             style.borderStyle = wwObjectStyle.borderStyle || 'solid';
             style.boxShadow = this.getShadow();
+
             style.padding = wwObjectStyle.padding ? (wwObjectStyle.padding / 2) + 'px ' + wwObjectStyle.padding + 'px' : 0;
 
+            return style;
+        },
+        wrapperStyle() {
+            let style = {};
+            let wwObjectStyle = this.wwObject.content.data.style || {};
+            style.justifyContent = wwObjectStyle.justify || 'center';
             return style;
         }
     },
@@ -165,10 +172,25 @@ export default {
                             icon: 'wwi wwi-edit-style',
                             shortcut: 's',
                             next: 'WWBUTTON_STYLE'
+                        },
+                        EDIT_JUSTIFY: {
+                            title: {
+                                en: 'Align',
+                                fr: 'Alignement'
+                            },
+                            desc: {
+                                en: 'Align left / right / center',
+                                fr: 'Aligner à gauche / droite / centrer'
+                            },
+                            icon: 'wwi wwi-center',
+                            shortcut: 'a',
+                            next: 'WWBUTTON_ALIGN'
                         }
                     }
                 }
             })
+
+
             wwLib.wwPopups.addStory('WWBUTTON_STYLE', {
                 title: {
                     en: 'Button style',
@@ -185,6 +207,64 @@ export default {
                     }
                 }
             })
+
+            wwLib.wwPopups.addStory('WWBUTTON_ALIGN', {
+                title: {
+                    en: 'Align',
+                    fr: 'Alignement'
+                },
+                type: 'wwPopupForm',
+                storyData: {
+                    fields: [
+                        {
+                            label: {
+                                en: 'Align :',
+                                fr: 'Alignement :'
+                            },
+                            type: 'select',
+                            key: 'justify',
+                            valueData: 'wwObject.content.data.style.justify',
+                            options: {
+                                type: 'text',
+                                values: [
+                                    {
+                                        value: 'center',
+                                        default: true,
+                                        text: {
+                                            en: 'Center',
+                                            fr: 'Centrer'
+                                        }
+                                    },
+                                    {
+                                        value: 'flex-start',
+                                        text: {
+                                            en: 'Left',
+                                            fr: 'Gauche'
+                                        }
+                                    },
+                                    {
+                                        value: 'flex-end',
+                                        text: {
+                                            en: 'Right',
+                                            fr: 'Droite'
+                                        }
+                                    }
+
+                                ]
+                            }
+                        }
+                    ]
+                },
+                buttons: {
+                    NEXT: {
+                        text: {
+                            en: 'Ok',
+                            fr: 'Ok'
+                        },
+                        next: false
+                    }
+                }
+            });
 
             let options = {
                 firstPage: 'WWBUTTON_EDIT',
@@ -229,6 +309,9 @@ export default {
                 }
                 if (typeof (result.padding) != 'undefined') {
                     this.wwObject.content.data.style.padding = result.padding;
+                }
+                if (typeof (result.justify) != 'undefined') {
+                    this.wwObject.content.data.style.justify = result.justify;
                 }
 
 

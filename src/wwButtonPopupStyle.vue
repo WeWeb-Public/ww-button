@@ -44,7 +44,7 @@
                     </div>
                 </div>
                 <div class="title">OMBRE</div>
-                <wwManagerSelect class="option" :options="boxShadowOptions" :value="props.boxShadow" @change="setValue('boxShadow', $event)"></wwManagerSelect>
+                <wwManagerShadow class="option" :value="props.boxShadow" @change="setValue('boxShadow', $event)"></wwManagerShadow>
             </div>
         </div>
     </div>

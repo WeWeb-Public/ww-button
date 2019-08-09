@@ -4,7 +4,7 @@
             <!-- wwManager:start -->
             <wwOrangeButton class="ww-orange-button" v-if="wwObjectCtrl.getSectionCtrl().getEditMode() == 'CONTENT'"></wwOrangeButton>
             <!-- wwManager:end -->
-            <wwObject :ww-object="wwObject.content.data.text" ww-inside-ww-object="ww-button" :ww-not-editable="textNotEditable" ww-default-object-type="ww-text" ww-object-types-allowed="['ww-text']" :ww-no-section="wwAttrs.wwNoSection" :ww-no-link="wwAttrs.wwNoLink" ww-force-edit-mode="CONTENT"></wwObject>
+            <wwObject :ww-object="wwObject.data.text" ww-inside-ww-object="ww-button" :ww-not-editable="textNotEditable" ww-default-object-type="ww-text" ww-object-types-allowed="['ww-text']" :ww-no-section="wwAttrs.wwNoSection" :ww-no-link="wwAttrs.wwNoLink" ww-force-edit-mode="CONTENT"></wwObject>
         </div>
     </div>
 </template>
@@ -54,7 +54,7 @@ export default {
         },
         style() {
             let style = {};
-            let wwObjectStyle = this.wwObject.content.data.style || {};
+            let wwObjectStyle = this.wwObject.style || {};
 
             if (wwObjectStyle.gradient && wwObjectStyle.gradient.value) {
                 style.background = wwObjectStyle.gradient.value;
@@ -77,7 +77,7 @@ export default {
         },
         wrapperStyle() {
             let style = {};
-            let wwObjectStyle = this.wwObject.content.data.style || {};
+            let wwObjectStyle = this.wwObject.style || {};
             style.justifyContent = wwObjectStyle.justify || 'center';
             return style;
         }
@@ -87,7 +87,7 @@ export default {
     beforeDestroy() { },
     methods: {
         init() {
-            if (!this.wwObject.content.data.text || !this.wwObject.content.data.text.uniqueId) {
+            if (!this.wwObject.data.text || !this.wwObject.data.text.uniqueId) {
 
                 let text = wwLib.wwObject.getDefault()
                 text.content = wwLib.wwObject.getDefaultContent('ww-text')
@@ -96,12 +96,12 @@ export default {
                     en: 'New button',
                 }
 
-                this.wwObject.content.data.text = text
+                this.wwObject.data.text = text
                 this.wwObjectCtrl.update(this.wwObject);
             }
         },
         getShadow() {
-            let wwObjectStyle = this.wwObject.content.data.style || {};
+            let wwObjectStyle = this.wwObject.style || {};
             const shadow = wwObjectStyle.boxShadow || {};
             if (shadow.x || shadow.y || shadow.b || shadow.s || shadow.c) {
                 return shadow.x + 'px ' + shadow.y + 'px ' + shadow.b + 'px ' + shadow.s + 'px ' + shadow.c;
@@ -223,7 +223,7 @@ export default {
                             },
                             type: 'select',
                             key: 'justify',
-                            valueData: 'wwObject.content.data.style.justify',
+                            valueData: 'wwObject.style.justify',
                             options: {
                                 type: 'text',
                                 values: [
@@ -282,36 +282,36 @@ export default {
                 /*=============================================m_ÔÔ_m=============================================\
                   STYLE
                 \================================================================================================*/
-                this.wwObject.content.data.style = this.wwObject.content.data.style || {};
+                this.wwObject.style = this.wwObject.style || {};
                 if (typeof (result.borderColor) != 'undefined') {
-                    this.wwObject.content.data.style.borderColor = result.borderColor;
+                    this.wwObject.style.borderColor = result.borderColor;
                 }
                 if (typeof (result.borderRadius) != 'undefined') {
-                    this.wwObject.content.data.style.borderRadius = result.borderRadius;
+                    this.wwObject.style.borderRadius = result.borderRadius;
                 }
                 if (typeof (result.borderStyle) != 'undefined') {
-                    this.wwObject.content.data.style.borderStyle = result.borderStyle;
+                    this.wwObject.style.borderStyle = result.borderStyle;
                 }
                 if (typeof (result.borderWidth) != 'undefined') {
-                    this.wwObject.content.data.style.borderWidth = result.borderWidth;
+                    this.wwObject.style.borderWidth = result.borderWidth;
                 }
                 if (typeof (result.boxShadow) != 'undefined') {
-                    this.wwObject.content.data.style.boxShadow = result.boxShadow;
+                    this.wwObject.style.boxShadow = result.boxShadow;
                 }
                 if (typeof (result.backgroundColor) != 'undefined') {
-                    this.wwObject.content.data.style.backgroundColor = result.backgroundColor;
+                    this.wwObject.style.backgroundColor = result.backgroundColor;
                 }
                 if (typeof (result.gradient) != 'undefined') {
-                    this.wwObject.content.data.style.gradient = result.gradient;
+                    this.wwObject.style.gradient = result.gradient;
                 }
                 if (typeof (result.gradientColor) != 'undefined') {
-                    this.wwObject.content.data.style.backgroundColor = result.gradientColor;
+                    this.wwObject.style.backgroundColor = result.gradientColor;
                 }
                 if (typeof (result.padding) != 'undefined') {
-                    this.wwObject.content.data.style.padding = result.padding;
+                    this.wwObject.style.padding = result.padding;
                 }
                 if (typeof (result.justify) != 'undefined') {
-                    this.wwObject.content.data.style.justify = result.justify;
+                    this.wwObject.style.justify = result.justify;
                 }
 
 

@@ -7,6 +7,33 @@ const addComponent = function () {
     if (window.vm) {
 
         wwLib.wwObject.register({
+            /* wwManager:start */
+            cmsOptions: {
+                wwObjectMenu: {
+                    items: [
+                        {
+                            name: 'OPTIONS',
+                            main: true,
+                            text: {
+                                en: 'Options',
+                                fr: 'Options'
+                            },
+                            icon: 'wwi wwi-edit-other',
+                            action: 'edit'
+                        },
+                        {
+                            name: 'LINK',
+                            text: {
+                                en: 'Link',
+                                fr: 'Lien'
+                            },
+                            icon: 'wwi wwi-link-external',
+                            action: 'changeLink'
+                        }
+                    ]
+                }
+            },
+            /* wwManager:end */
             content: {
                 type: name,
                 data: {
@@ -37,34 +64,7 @@ const addComponent = function () {
                 wwAnalytics: {
                     click: true
                 }
-            },
-            /* wwManager:start */
-            cmsOptions: {
-                wwObjectMenu: {
-                    items: [
-                        {
-                            name: 'OPTIONS',
-                            main: true,
-                            text: {
-                                en: 'Options',
-                                fr: 'Options'
-                            },
-                            icon: 'wwi wwi-edit-other',
-                            action: 'edit'
-                        },
-                        {
-                            name: 'LINK',
-                            text: {
-                                en: 'Link',
-                                fr: 'Lien'
-                            },
-                            icon: 'wwi wwi-link-external',
-                            action: 'changeLink'
-                        }
-                    ]
-                }
             }
-            /* wwManager:end */
         });
 
         window.vm.addComponent({

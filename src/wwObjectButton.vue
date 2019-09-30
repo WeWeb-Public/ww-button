@@ -84,7 +84,6 @@ export default {
     },
     watch: {
     },
-    beforeDestroy() { },
     methods: {
         init() {
             if (!this.wwObject.content.data.text || !this.wwObject.content.data.text.uniqueId) {
@@ -331,6 +330,8 @@ export default {
         this.init();
 
         this.$emit('ww-loaded', this);
+    },
+    beforeDestroy() {
     }
 };
 </script>
@@ -342,6 +343,10 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: initial;
+    line-height: initial;
+    color: initial;
+    user-select: none;
 }
 
 .ww-button {

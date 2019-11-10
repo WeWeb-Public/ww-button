@@ -409,25 +409,40 @@ export default {
 <style scoped lang="scss">
 .ww-popup-style {
     .content {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         padding: 20px;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
         overflow: auto;
         min-height: 100%;
         font-family: "Monserrat", sans-serif;
 
         @media (min-width: 992px) {
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: row;
             flex-direction: row;
         }
 
         .preview {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
             justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
             background-color: #efefef;
             border: 2px solid #cacaca;
 
             @media (min-width: 992px) {
+                -ms-flex-preferred-size: 50%;
                 flex-basis: 50%;
             }
 
@@ -436,15 +451,27 @@ export default {
         }
 
         .options {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
             justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
             flex-direction: column;
             padding: 50px 0;
 
             @media (min-width: 992px) {
+                -ms-flex-preferred-size: 50%;
                 flex-basis: 50%;
                 padding: 0 15px;
+                -webkit-box-align: initial;
+                -ms-flex-align: initial;
                 align-items: initial;
             }
 
@@ -466,7 +493,12 @@ export default {
 
             .option {
                 width: 80%;
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: column;
                 flex-direction: column;
 
                 @media (min-width: 992px) {
@@ -474,17 +506,25 @@ export default {
                 }
 
                 .option-row {
+                    display: -webkit-box;
+                    display: -ms-flexbox;
                     display: flex;
+                    -webkit-box-align: center;
+                    -ms-flex-align: center;
                     align-items: center;
 
                     &.center {
+                        -webkit-box-pack: center;
+                        -ms-flex-pack: center;
                         justify-content: center;
                     }
 
                     .slider {
+                        -ms-flex-preferred-size: 80%;
                         flex-basis: 80%;
 
                         @media (min-width: 992px) {
+                            -ms-flex-preferred-size: 250px;
                             flex-basis: 250px;
                         }
                     }
@@ -493,6 +533,8 @@ export default {
                         padding-left: 10px;
                         font-size: 1.2rem;
                         font-family: "Monserrat", sans-serif;
+                        -webkit-box-flex: 1;
+                        -ms-flex-positive: 1;
                         flex-grow: 1;
                         text-align: right;
                         white-space: nowrap;
@@ -503,6 +545,8 @@ export default {
                     }
 
                     .border-style {
+                        -webkit-box-flex: 1;
+                        -ms-flex-positive: 1;
                         flex-grow: 1;
                     }
 

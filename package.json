@@ -11,13 +11,13 @@
     "scripts": {
         "build": "weweb-build",
         "serve": "weweb-serve",
-        "upload": "weweb-upload"
+        "create-config": "weweb-config"
     },
     "dependencies": {
         "vue": "^2.6.10"
     },
     "devDependencies": {
-        "weweb-client": "^1.0.50"
+        "weweb-client": "^1.1.0"
     },
     "browserslist": [
         "> 1%",

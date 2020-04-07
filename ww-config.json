@@ -1,0 +1,57 @@
+{
+    "componentPath": "./src/wwObjectButton.vue",
+    "content": {
+        "type": "ww-button",
+        "data": {
+            "text": {},
+            "style": {
+                "backgroundColor": "#FFFFFF",
+                "gradient": "",
+                "borderRadius": 50,
+                "borderWidth": 1,
+                "borderColor": "#000000",
+                "borderStyle": "solid",
+                "padding": 10,
+                "justify": null,
+                "boxShadow": {
+                    "x": 0,
+                    "y": 0,
+                    "b": 0,
+                    "s": 0,
+                    "c": ""
+                }
+            },
+            "fullWidth": false
+        }
+    },
+    "upsales": {
+        "wwAnalytics": {
+            "click": true
+        }
+    },
+    "cmsOptions": {
+        "wwObjectMenu": {
+            "items": [
+                {
+                    "name": "OPTIONS",
+                    "main": true,
+                    "text": {
+                        "en": "Options",
+                        "fr": "Options"
+                    },
+                    "icon": "wwi wwi-edit-other",
+                    "action": "edit"
+                },
+                {
+                    "name": "LINK",
+                    "text": {
+                        "en": "Link",
+                        "fr": "Lien"
+                    },
+                    "icon": "wwi wwi-link-external",
+                    "action": "changeLink"
+                }
+            ]
+        }
+    }
+}

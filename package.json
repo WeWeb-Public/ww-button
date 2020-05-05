@@ -14,10 +14,10 @@
         "create-config": "weweb-config"
     },
     "dependencies": {
-        "vue": "^2.6.10"
+        "vue": "^2.6.11"
     },
     "devDependencies": {
-        "weweb-client": "^1.1.0"
+        "weweb-client": "latest"
     },
     "browserslist": [
         "> 1%",

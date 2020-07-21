@@ -2,7 +2,7 @@
     <div class="ww-button-wrapper" :style="wrapperStyle">
         <div class="ww-button" :style="style">
             <!-- wwManager:start -->
-            <wwOrangeButton class="ww-orange-button" v-if="wwObjectCtrl.getSectionCtrl().getEditMode() == 'CONTENT'"></wwOrangeButton>
+            <wwOrangeButton class="ww-orange-button" v-if="wwObjectCtrl.getSectionCtrl().getEditMode() === 'CONTENT'"></wwOrangeButton>
             <!-- wwManager:end -->
             <wwObject
                 :ww-object="wwObject.content.data.text"
